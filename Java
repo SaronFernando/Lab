@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class ShortestPathVector {
+    public static void main(String[] args) {
+        Map<String, Integer> A = new HashMap<>(Map.of("A", 0));
+        Map<String, Integer> B = new HashMap<>(Map.of("B", 0));
+
+        B.forEach((k, v) -> A.put(k, v + 1)); // A learns from B
+        A.forEach((k, v) -> B.put(k, v + 1)); // B learns from A
+
+        System.out.println("Routing Table for A: " + A);
+        System.out.println("Routing Table for B: " + B);
+    }
+}
+
